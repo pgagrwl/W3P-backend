@@ -1,0 +1,50 @@
+{
+    "name": "W3PX#2",
+    "tokenId": 2,
+    "description": "Web3 Punks (X Collection)",
+    "image": "ipfs://bafybeig6rrswn5352u5h3f6ggtse2vhmeogrh5xuzylkuk7ey5gdks7r7u/2.png",
+    "external_url": "https://example.com/token-details",
+    "count": 4,
+    "attributes": [
+        {
+            "trait_type": "Gender",
+            "value": "Female"
+        },
+        {
+            "trait_type": "Skin Tone",
+            "value": "Brown"
+        },
+        {
+            "trait_type": "Hair Color",
+            "value": "Black"
+        },
+        {
+            "trait_type": "Lipstick Type",
+            "value": "Glossy"
+        },
+        {
+            "trait_type": "Lipstick Color",
+            "value": "Maroon"
+        },
+        {
+            "trait_type": "Ear Stud Shape",
+            "value": "Square"
+        },
+        {
+            "trait_type": "Ear Stud Gemstone",
+            "value": "Diamond"
+        },
+        {
+            "trait_type": "Necklace Metal",
+            "value": "Gold"
+        },
+        {
+            "trait_type": "Necklace Gemstone",
+            "value": "Blue Sapphire"
+        },
+        {
+            "trait_type": "Mood",
+            "value": "Smirk"
+        }
+    ]
+}

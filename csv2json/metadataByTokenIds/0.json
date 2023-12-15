@@ -1,0 +1,22 @@
+{
+    "name": "W3PX#0",
+    "tokenId": 0,
+    "description": "Web3 Punks (X Collection)",
+    "image": "ipfs://bafybeieh2apyf4ggnpc6v2hw5rnqukypyqukuphgtxszpchbwkqpcc4o4y/0.png",
+    "external_url": "https://example.com/token-details",
+    "count": 0,
+    "attributes": [
+        {
+            "trait_type": "Gender",
+            "value": "Male"
+        },
+        {
+            "trait_type": "Skin Tone",
+            "value": "Fair"
+        },
+        {
+            "trait_type": "Hair Color",
+            "value": "Blonde"
+        }
+    ]
+}

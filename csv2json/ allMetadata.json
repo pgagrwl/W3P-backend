@@ -1,0 +1,134 @@
+[
+    {
+        "name": "W3PX#0",
+        "tokenId": 0,
+        "description": "Web3 Punks (X Collection)",
+        "image": "ipfs://bafybeieh2apyf4ggnpc6v2hw5rnqukypyqukuphgtxszpchbwkqpcc4o4y/0.png",
+        "URI": "https://ipfs.io/ipfs/bafkreifbuykppmy55knmtpa52giuwj2yhvplkg43iyn2t6u3gp3vgb4vji",
+        "external_url": "https://example.com/token-details",
+        "count": 0,
+        "attributes": [
+            {
+                "trait_type": "Gender",
+                "value": "Male"
+            },
+            {
+                "trait_type": "Skin Tone",
+                "value": "Fair"
+            },
+            {
+                "trait_type": "Hair Color",
+                "value": "Blonde"
+            }
+        ]
+    },
+    {
+        "name": "W3PX#1",
+        "tokenId": 1,
+        "description": "Web3 Punks (X Collection)",
+        "image": "ipfs://bafybeihfldjgby6l3lxefoor6nikz3n5cdhoq2gtrozikcvkbfrxt7q7mu/1.png",
+        "URI": "https://ipfs.io/ipfs/bafkreic3mnwif2btb5f63ldz7vmcjyydznazxf7gvtgdezwtoacxugoe4y",
+        "external_url": "https://example.com/token-details",
+        "count": 2,
+        "attributes": [
+            {
+                "trait_type": "Gender",
+                "value": "Male"
+            },
+            {
+                "trait_type": "Skin Tone",
+                "value": "Black"
+            },
+            {
+                "trait_type": "Hair Color",
+                "value": "Dark Brown"
+            },
+            {
+                "trait_type": "Ear Stud Shape",
+                "value": "Round"
+            },
+            {
+                "trait_type": "Ear Stud Gemstone",
+                "value": "Ruby"
+            },
+            {
+                "trait_type": "Mood",
+                "value": "Happy"
+            }
+        ]
+    },
+    {
+        "name": "W3PX#2",
+        "tokenId": 2,
+        "description": "Web3 Punks (X Collection)",
+        "image": "ipfs://bafybeig6rrswn5352u5h3f6ggtse2vhmeogrh5xuzylkuk7ey5gdks7r7u/2.png",
+        "URI": "https://ipfs.io/ipfs/bafkreiayldffptxst2aold6wrj2eytdabh2wnovewdl74czi7hau4rnmqu",
+        "external_url": "https://example.com/token-details",
+        "count": 4,
+        "attributes": [
+            {
+                "trait_type": "Gender",
+                "value": "Female"
+            },
+            {
+                "trait_type": "Skin Tone",
+                "value": "Brown"
+            },
+            {
+                "trait_type": "Hair Color",
+                "value": "Black"
+            },
+            {
+                "trait_type": "Lipstick Type",
+                "value": "Glossy"
+            },
+            {
+                "trait_type": "Lipstick Color",
+                "value": "Maroon"
+            },
+            {
+                "trait_type": "Ear Stud Shape",
+                "value": "Square"
+            },
+            {
+                "trait_type": "Ear Stud Gemstone",
+                "value": "Diamond"
+            },
+            {
+                "trait_type": "Necklace Metal",
+                "value": "Gold"
+            },
+            {
+                "trait_type": "Necklace Gemstone",
+                "value": "Blue Sapphire"
+            },
+            {
+                "trait_type": "Mood",
+                "value": "Smirk"
+            }
+        ]
+    },
+    {
+        "name": "W3PX#3",
+        "tokenId": 3,
+        "description": "Web3 Punks (X Collection)",
+        "image": "ipfs://bafybeigkbivojt5jxhnfaf5vkjwn7fg7k6gzyxm6l6tyoapbtfly7adjkq/3.png",
+        "URI": "https://ipfs.io/ipfs/bafkreichdd7v6kq4fqraj7boc4qtxjfr4dpwlqxvzggl23ssaxhxsdgv3i",
+        "external_url": "https://example.com/token-details",
+        "count": 0,
+        "attributes": [
+            {
+                "trait_type": "Gender",
+                "value": "Female"
+            },
+            {
+                "trait_type": "Skin Tone",
+                "value": "Caucasian"
+            },
+            {
+                "trait_type": "Hair Color",
+                "value": "Northern Lights"
+            }
+        ]
+    }
+]
