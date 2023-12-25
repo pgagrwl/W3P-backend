@@ -1,11 +1,21 @@
+
 const fs = require('fs');
 const Papa = require('papaparse');
-const storeNFT = require('./mint')
-const storeMetadata = require('./storeMetadata')
-const ethers = require("ethers")
-const attributesHeader = require('./attributeHeaders')
+require("dotenv").config()
+
+const storeNFT = require('../utils/storeImage')
+const storeMetadata = require('../utils/storeMetadata')
+const attributesHeader = require('../utils/attributeHeaders')
+const { encryptMessage, decryptMessage } = require('../utils/encrypt')
+
+// Provide the path to your CSV file
+const csvFilePath = './../input/NFT.csv';
+
 const metadataArr = []
 const metadataWithURI = []
+const key = process.env.ENCRYPTION_KEY
+const iv = process.env.ENCRYPTION_IV
+
 function convertCSVtoJSON(csvFilePath) {
     const csvFileContent = fs.readFileSync(csvFilePath, 'utf8');
 
@@ -22,14 +32,14 @@ function convertCSVtoJSON(csvFilePath) {
                             "value": `${jsonData[i][headers[j]]}`
                         })
                     }
-                const IPFSNFT = await storeNFT(`./images/${i}.png`, `W3PX#${jsonData[i].id}`, "Web3 Punks (X Collection)")
+                const IPFSNFT = await storeNFT(`${jsonData[i].id}`, "Web3 Punks (X Collection)", `./../images/${i}.png`)
                 console.log('IPFSNFT', IPFSNFT);
 
                 const payload = {
                     "name": `W3PX#${jsonData[i].id}`,
                     "tokenId": jsonData[i].id,
                     "description": "Web3 Punks (X Collection)",
-                    "image": IPFSNFT,
+                    "image": `https://ipfs.io/ipfs/${IPFSNFT}`,
                     "external_url": "https://example.com/token-details",
                     "count": jsonData[i].Count,
                     "attributes": attributeArr
@@ -38,7 +48,7 @@ function convertCSVtoJSON(csvFilePath) {
                 // console.log('metadata stored', metadataStored);
 
                 metadataArr.push(payload);
-                fs.writeFile(`./metadataByTokenIds/${jsonData[i].id}.json`, JSON.stringify(payload), (err) => {
+                fs.writeFile(`./../output/metadataByTokenIds/${jsonData[i].id}.json`, JSON.stringify(payload), (err) => {
                     if (err)
                         console.log(err);
                     else {
@@ -46,19 +56,27 @@ function convertCSVtoJSON(csvFilePath) {
                     }
                 });
                 // URIArr.push(metadataStored)
+                const encryptedData = encryptMessage(iv, key, metadataStored);
+
+                // Decrypt the message
+                const decryptedMessage = decryptMessage(iv, key, encryptedData);
+
+                console.log('Encrypted:', encryptedData);
+                console.log('Decrypted:', decryptedMessage);
+
                 const newPayload = {
                     "name": `W3PX#${jsonData[i].id}`,
                     "tokenId": jsonData[i].id,
                     "description": "Web3 Punks (X Collection)",
-                    "image": IPFSNFT,
-                    "URI": metadataStored,
+                    "image": encryptMessage(iv, key, IPFSNFT),
+                    "URI": encryptMessage(iv, key, metadataStored),
                     "external_url": "https://example.com/token-details",
                     "count": jsonData[i].Count,
                     "attributes": attributeArr
                 }
                 metadataWithURI.push(newPayload)
             }
-            fs.writeFile(`./ allMetadata.json`, JSON.stringify(metadataWithURI), (err) => {
+            fs.writeFile(`./../output/allMetadata.json`, JSON.stringify(metadataWithURI), (err) => {
                 if (err)
                     console.log(err);
                 else {
@@ -73,8 +91,4 @@ function convertCSVtoJSON(csvFilePath) {
 
 }
 
-
-
-// Provide the path to your CSV file
-const csvFilePath = './NFT.csv';
 convertCSVtoJSON(csvFilePath);

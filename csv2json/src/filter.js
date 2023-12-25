@@ -2,7 +2,7 @@ const fs = require('fs');
 const keccak256 = require('keccak256');
 const filterArr = []
 
-fs.readFile('./ allMetadata.json', 'ascii', function (err, data) {
+fs.readFile('./../output/allMetadata.json', 'ascii', function (err, data) {
 
     const arr = JSON.parse(data)
     let traitsObj = {}
@@ -26,7 +26,7 @@ fs.readFile('./ allMetadata.json', 'ascii', function (err, data) {
     });
 
 
-    fs.writeFile(`data.json`, JSON.stringify(filterArr), (err) => {
+    fs.writeFile(`./../output/data.json`, JSON.stringify(filterArr), (err) => {
         if (err)
             console.log(err);
         else {
