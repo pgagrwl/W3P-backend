@@ -32,15 +32,15 @@ function convertCSVtoJSON(csvFilePath) {
             });
           }
         const IPFSNFT = await storeNFT(
-          `${jsonData[i].id}`,
+          `${jsonData[i].NewId}`,
           "Web3 Punks (X Collection)",
-          `./../images/${i}.png`
+          `./../images/${jsonData[i].OldId}.png`
         );
         console.log("IPFSNFT", IPFSNFT);
 
         const payload = {
-          name: `W3PX#${jsonData[i].id}`,
-          tokenId: jsonData[i].id,
+          name: `W3PX#${jsonData[i].NewId}`,
+          tokenId: jsonData[i].NewId,
           description: "Web3 Punks (X Collection)",
           image: `https://ipfs.io/ipfs/${IPFSNFT}`,
           external_url: "https://example.com/token-details",
@@ -51,7 +51,7 @@ function convertCSVtoJSON(csvFilePath) {
 
         metadataArr.push(payload);
         fs.writeFile(
-          `./../output/metadataByTokenIds/${jsonData[i].id}.json`,
+          `./../output/metadataByTokenIds/${jsonData[i].NewId}.json`,
           JSON.stringify(payload),
           (err) => {
             if (err) console.log(err);
@@ -71,8 +71,8 @@ function convertCSVtoJSON(csvFilePath) {
         // console.log("Decrypted:", decryptedMessage);
 
         const newPayload = {
-          name: `W3PX#${jsonData[i].id}`,
-          tokenId: jsonData[i].id,
+          name: `W3PX#${jsonData[i].NewId}`,
+          tokenId: jsonData[i].NewId,
           description: "Web3 Punks (X Collection)",
           image: encryptMessage(iv, key, IPFSNFT),
           URI: encryptMessage(iv, key, metadataStored),
